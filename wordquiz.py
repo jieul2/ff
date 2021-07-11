@@ -5,5 +5,6 @@ import random
 word = ['apple', 'banana', 'orange']
 
 word_choice = random.choice(word)
+word_choice_list = list(word_choice)
 
-print(word_choice)
+print(word_choice_list)
