@@ -3,3 +3,7 @@
 import random
 
 word = ['apple', 'banana', 'orange']
+
+word_choice = random.choice(word)
+
+print(word_choice)
