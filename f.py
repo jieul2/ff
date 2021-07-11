@@ -15,5 +15,3 @@ for i in names:
 - 나코 드림.
 ''')
   f.close()
-
-  #git test
