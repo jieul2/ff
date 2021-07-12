@@ -11,6 +11,7 @@ answer_list = ['_' * len(word_choice_list)]
 print(word_choice_list)
 print(answer_list)
 
-if input('Input letter > ') in word_choice_list:
-    print('Correct')
-else: print('Wrong')
+while '_' not in answer_list:
+    if input('Input letter > ') in word_choice_list:
+        print('Correct')
+    else: print('Wrong')
