@@ -6,12 +6,18 @@ word = ['apple', 'banana', 'orange']
 
 word_choice = random.choice(word)
 word_choice_list = list(word_choice)
-answer_list = ['_' * len(word_choice_list)]
+answer_list = ['_'] * len(word_choice_list)
 
-print(word_choice_list)
+print(f'answer : {word_choice}')
 print(answer_list)
 
-while '_' not in answer_list:
-    if input('Input letter > ') in word_choice_list:
+while '_' in answer_list:
+    input_word = input('Input letter > ')
+    if input_word in word_choice_list:
         print('Correct')
+        word_index = list(filter(lambda e:word_choice_list[e] == input_word, range(len(word_choice_list))))
+        for i in word_index: answer_list[i] = input_word
+        print(answer_list)
     else: print('Wrong')
+
+print('Success')
