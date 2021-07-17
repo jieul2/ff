@@ -1,37 +1,24 @@
-a = 26
+number = 1
 
-if a < 10:
-    a = int(str(a) + '0')
+number_list = [int(a) for a in str(number)]
+answer_list = [int(a) for a in str(number)]
 
-answer = a
 count = 0
 
-print(f'first  {str(a)[:1]}')
-print(f'second  {a%10}')
+if len(number_list) == 1:
+    number_list.append(0)
+    answer_list.append(0)
 
+print(answer_list)
 while True:
-    firstNum = int(a/10)
-    secondNum = a % 10
-    tem = firstNum + secondNum
-    print(tem)
-    if tem > 10:
-        secondNum = tem % 10
+    resultNum = sum(number_list)
+    resultNum_list = [int(a) for a in str(resultNum)]
 
-    a = int(str(secondNum) + str(tem))
-    print(f'{answer} === {a} first : {firstNum} second : {secondNum}')
-    count += 1
-    if a == answer or count == 5:
+    number_list[0] = number_list[1]
+    number_list[1] = resultNum_list[-1]
+    print(f'first {number_list[0]} second {number_list[1]} count {count}')
+    count +=1
+    print(number_list)
+    if number_list == answer_list:
         print(count)
         break
-
-# while True:
-
-#     tem = int(str(a)[:-1]) + int(str(a)[-1:])
-#     if tem > 10:
-#         tem = int(str(tem)[-1:])
-#     a = int(str(a)[-1:] + str(tem))
-#     count += 1
-#     if a == answer:
-#         print(count)
-#         break
-
